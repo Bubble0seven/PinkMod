@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "pinkmod",
+    "name": "pinkmod",
+    "description": "Pink Blocks need love too !",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "jinkhya"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

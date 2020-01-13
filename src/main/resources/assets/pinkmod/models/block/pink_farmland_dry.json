@@ -1,0 +1,8 @@
+{
+  "parent": "pinkmod:block/pink_farmland",
+  "textures": {
+    "particle": "pinkmod:blocks/pink_dirt",
+    "dirt": "pinkmod:blocks/pink_dirt",
+    "top": "pinkmod:blocks/pink_farmland_dry"
+  }
+}

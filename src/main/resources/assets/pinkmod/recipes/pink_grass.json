@@ -1,0 +1,26 @@
+
+
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "m",
+    "p"
+  ],
+  "key":
+  {
+    "p":
+    {
+      "item": "pinkmod:pink_dirt"
+    },
+    "m":
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyePink"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:pink_grass"
+  }
+}

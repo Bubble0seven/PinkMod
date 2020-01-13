@@ -1,0 +1,29 @@
+
+
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ddd",
+    "dmd",
+    "ddd"
+  ],
+  "key":
+  {
+    "d":
+    {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "m":
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeMagenta"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:pink_dirt",
+    "count": 8
+  }
+}
