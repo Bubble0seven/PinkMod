@@ -6,21 +6,13 @@ This is my first mod I wrote for a dear friend of mine who's making a modpack. I
 It adds 9 blocks :
 
 - Pink Dirt
-
 - Pink Grass
-
 - Pink Farmland
-
 - Pink Path
-
 - Pink Coarse Dirt
-
 - Pink Podzol
-
 - Pink Stone
-
 - Pink Cobblestone
-
 - Pink Mossy Cobblestone
 
 They behave like the vanilla variants.
