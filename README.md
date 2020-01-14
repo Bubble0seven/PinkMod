@@ -19,7 +19,7 @@ It adds 9 blocks :
 
 - Pink Stone
 
-- Pink Cobbleston
+- Pink Cobblestone
 
 - Pink Mossy Cobblestone
 
