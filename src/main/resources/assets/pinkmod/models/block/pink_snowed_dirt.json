@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "pinkmod:blocks/pink_dirt",
+    "bottom": "pinkmod:blocks/pink_dirt",
+    "top": "pinkmod:blocks/pink_grass_top",
+    "side": "pinkmod:blocks/pink_grass_side_snowed"
+  }
+}

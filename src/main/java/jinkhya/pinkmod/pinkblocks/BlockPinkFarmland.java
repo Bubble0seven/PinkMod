@@ -25,6 +25,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 import java.util.Random;
 
 @SuppressWarnings("deprecation")
@@ -43,46 +44,38 @@ public class BlockPinkFarmland extends Block implements IGrowable {
         this.setLightOpacity(255);
         setCreativeTab(PinkMod.creativeTabs);
     }
+
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return FARMLAND_AABB;
     }
+
     @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
-    }
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
 
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        int i = ((Integer)state.getValue(MOISTURE)).intValue();
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
 
-        if (!this.hasWater(worldIn, pos) && !worldIn.isRainingAt(pos.up()))
-        {
-            if (i > 0)
-            {
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
+        int i = ((Integer) state.getValue(MOISTURE)).intValue();
+
+        if (!this.hasWater(worldIn, pos) && !worldIn.isRainingAt(pos.up())) {
+            if (i > 0) {
                 worldIn.setBlockState(pos, state.withProperty(MOISTURE, Integer.valueOf(i - 1)), 2);
-            }
-            else if (!this.hasCrops(worldIn, pos))
-            {
+            } else if (!this.hasCrops(worldIn, pos)) {
                 turnToDirt(worldIn, pos);
             }
-        }
-        else if (i < 7)
-        {
+        } else if (i < 7) {
             worldIn.setBlockState(pos, state.withProperty(MOISTURE, Integer.valueOf(7)), 2);
         }
     }
 
 
-    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)
-    {
+    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
         if (net.minecraftforge.common.ForgeHooks.onFarmlandTrample(worldIn, pos, ModBlocks.blockPinkDirt.getDefaultState(), fallDistance, entityIn)) // Forge: Move logic to Entity#canTrample
         {
             turnToDirt(worldIn, pos);
@@ -91,30 +84,24 @@ public class BlockPinkFarmland extends Block implements IGrowable {
         super.onFallenUpon(worldIn, pos, entityIn, fallDistance);
     }
 
-    protected static void turnToDirt(World p_190970_0_, BlockPos worldIn)
-    {
+    protected static void turnToDirt(World p_190970_0_, BlockPos worldIn) {
         p_190970_0_.setBlockState(worldIn, ModBlocks.blockPinkDirt.getDefaultState());
         AxisAlignedBB axisalignedbb = field_194405_c.offset(worldIn);
 
-        for (Entity entity : p_190970_0_.getEntitiesWithinAABBExcludingEntity((Entity)null, axisalignedbb))
-        {
+        for (Entity entity : p_190970_0_.getEntitiesWithinAABBExcludingEntity((Entity) null, axisalignedbb)) {
             double d0 = Math.min(axisalignedbb.maxY - axisalignedbb.minY, axisalignedbb.maxY - entity.getEntityBoundingBox().minY);
             entity.setPositionAndUpdate(entity.posX, entity.posY + d0 + 0.001D, entity.posZ);
         }
     }
 
-    private boolean hasCrops(World worldIn, BlockPos pos)
-    {
+    private boolean hasCrops(World worldIn, BlockPos pos) {
         Block block = worldIn.getBlockState(pos.up()).getBlock();
-        return block instanceof net.minecraftforge.common.IPlantable && canSustainPlant(worldIn.getBlockState(pos), worldIn, pos, net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)block);
+        return block instanceof net.minecraftforge.common.IPlantable && canSustainPlant(worldIn.getBlockState(pos), worldIn, pos, net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable) block);
     }
 
-    private boolean hasWater(World worldIn, BlockPos pos)
-    {
-        for (BlockPos.MutableBlockPos blockpos$mutableblockpos : BlockPos.getAllInBoxMutable(pos.add(-4, 0, -4), pos.add(4, 1, 4)))
-        {
-            if (worldIn.getBlockState(blockpos$mutableblockpos).getMaterial() == Material.WATER)
-            {
+    private boolean hasWater(World worldIn, BlockPos pos) {
+        for (BlockPos.MutableBlockPos blockpos$mutableblockpos : BlockPos.getAllInBoxMutable(pos.add(-4, 0, -4), pos.add(4, 1, 4))) {
+            if (worldIn.getBlockState(blockpos$mutableblockpos).getMaterial() == Material.WATER) {
                 return true;
             }
         }
@@ -122,32 +109,26 @@ public class BlockPinkFarmland extends Block implements IGrowable {
         return net.minecraftforge.common.FarmlandWaterManager.hasBlockWaterTicket(worldIn, pos);
     }
 
-    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
-    {
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
         super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
 
-        if (worldIn.getBlockState(pos.up()).getMaterial().isSolid())
-        {
+        if (worldIn.getBlockState(pos.up()).getMaterial().isSolid()) {
             turnToDirt(worldIn, pos);
         }
     }
 
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
         super.onBlockAdded(worldIn, pos, state);
 
-        if (worldIn.getBlockState(pos.up()).getMaterial().isSolid())
-        {
+        if (worldIn.getBlockState(pos.up()).getMaterial().isSolid()) {
             turnToDirt(worldIn, pos);
         }
     }
 
 
     @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
-    {
-        switch (side)
-        {
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+        switch (side) {
             case UP:
                 return true;
             case NORTH:
@@ -163,31 +144,27 @@ public class BlockPinkFarmland extends Block implements IGrowable {
 
     }
 
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return ModBlocks.blockPinkDirt.getItemDropped(ModBlocks.blockPinkDirt.getDefaultState(), rand, fortune);
     }
 
 
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(MOISTURE, Integer.valueOf(meta & 7));
     }
 
-     public int getMetaFromState(IBlockState state)
-    {
-        return ((Integer)state.getValue(MOISTURE)).intValue();
+    public int getMetaFromState(IBlockState state) {
+        return ((Integer) state.getValue(MOISTURE)).intValue();
     }
 
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {MOISTURE});
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{MOISTURE});
     }
 
-    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
-    {
+    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
         return face == EnumFacing.DOWN ? BlockFaceShape.SOLID : BlockFaceShape.UNDEFINED;
     }
+
     @SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
@@ -209,17 +186,14 @@ public class BlockPinkFarmland extends Block implements IGrowable {
     }
 
     @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, net.minecraftforge.common.IPlantable plantable)
-    {
+    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, net.minecraftforge.common.IPlantable plantable) {
         IBlockState plant = plantable.getPlant(world, pos.offset(direction));
         net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
 
-        if (plant.getBlock() instanceof IGrowable)
-        {
+        if (plant.getBlock() instanceof IGrowable) {
             return true;
         }
-        if (plant.getBlock() instanceof IPlantable)
-        {
+        if (plant.getBlock() instanceof IPlantable) {
             return true;
         }
 

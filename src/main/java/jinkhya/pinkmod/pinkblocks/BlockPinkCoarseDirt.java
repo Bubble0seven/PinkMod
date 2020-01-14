@@ -1,9 +1,5 @@
 package jinkhya.pinkmod.pinkblocks;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemHoe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import jinkhya.pinkmod.ModBlocks;
 import jinkhya.pinkmod.PinkMod;
@@ -24,15 +20,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BlockPinkDirt extends Block implements IGrowable {
+public class BlockPinkCoarseDirt extends Block implements IGrowable {
 
-    public BlockPinkDirt() {
+    public BlockPinkCoarseDirt() {
         super(Material.GRASS);
-        setRegistryName(new ResourceLocation(PinkMod.MOD_ID, "pink_dirt"));
+        setRegistryName(new ResourceLocation(PinkMod.MOD_ID, "pink_coarse_dirt"));
         setHardness((float) 0.5);
         setResistance(2.5f);
         setSoundType(SoundType.GROUND);
-        setTranslationKey(PinkMod.MOD_ID + ".pink_dirt");
+        setTranslationKey(PinkMod.MOD_ID + ".pink_coarse_dirt");
         setCreativeTab(PinkMod.creativeTabs);
 
     }
@@ -80,17 +76,6 @@ public class BlockPinkDirt extends Block implements IGrowable {
                 ++j;
             }
         }
-    }
-
-    @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack held = player.getHeldItem(hand);
-        if (held.getItem() instanceof ItemHoe && world.isAirBlock(pos.up())) {
-            held.damageItem(1, player);
-            world.setBlockState(pos, ModBlocks.blockPinkFarmland.getDefaultState(), 1 | 2);
-            return true;
-        }
-        return false;
     }
 
     @Override

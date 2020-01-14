@@ -33,11 +33,13 @@ public class PinkMod {
     public static final CreativeTabs creativeTabs = new CreativeTabs("pinkmod") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack (ModBlocks.blockPinkDirt);
+            return new ItemStack(ModBlocks.blockPinkGrass);
         }
     };
 
-    /** This is the instance of your mod as created by Forge. It will never be null. */
+    /**
+     * This is the instance of your mod as created by Forge. It will never be null.
+     */
     @Mod.Instance(MOD_ID)
     public static PinkMod INSTANCE;
     public static Logger logger;
@@ -96,21 +98,27 @@ public class PinkMod {
      */
     @Mod.EventBusSubscriber
     public static class ObjectRegistryHandler {
-       /** Listen for the register event for creating custom items */
-       @SubscribeEvent
-       public static void addItems(RegistryEvent.Register<Item> event) {
+        /**
+         * Listen for the register event for creating custom items
+         */
+        @SubscribeEvent
+        public static void addItems(RegistryEvent.Register<Item> event) {
            /*
              event.getRegistry().register(new ItemBlock(Blocks.myBlock).setRegistryName(MOD_ID, "myBlock"));
              event.getRegistry().register(new MySpecialItem().setRegistryName(MOD_ID, "mySpecialItem"));
             */
-       }
-       /** Listen for the register event for creating custom blocks */
-       @SubscribeEvent
-       public static void addBlocks(RegistryEvent.Register<Block> event) {
+
+        }
+
+        /**
+         * Listen for the register event for creating custom blocks
+         */
+        @SubscribeEvent
+        public static void addBlocks(RegistryEvent.Register<Block> event) {
            /*
              event.getRegistry().register(new MySpecialBlock().setRegistryName(MOD_ID, "mySpecialBlock"));
             */
-       }
+        }
     }
     /* EXAMPLE ITEM AND BLOCK - you probably want these in separate files
     public static class MySpecialItem extends Item {

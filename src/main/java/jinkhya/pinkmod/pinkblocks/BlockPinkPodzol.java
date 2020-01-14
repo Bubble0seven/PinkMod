@@ -1,10 +1,5 @@
 package jinkhya.pinkmod.pinkblocks;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemHoe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
-import net.minecraft.world.World;
 import jinkhya.pinkmod.ModBlocks;
 import jinkhya.pinkmod.PinkMod;
 import net.minecraft.block.*;
@@ -17,6 +12,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
@@ -24,25 +20,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class BlockPinkDirt extends Block implements IGrowable {
+@SuppressWarnings("deprecation")
+public class BlockPinkPodzol extends Block implements IGrowable {
 
-    public BlockPinkDirt() {
-        super(Material.GRASS);
-        setRegistryName(new ResourceLocation(PinkMod.MOD_ID, "pink_dirt"));
+    public BlockPinkPodzol() {
+        super(Material.GROUND);
+        setRegistryName(new ResourceLocation(PinkMod.MOD_ID, "pink_podzol"));
+        this.setTickRandomly(true);
         setHardness((float) 0.5);
         setResistance(2.5f);
         setSoundType(SoundType.GROUND);
-        setTranslationKey(PinkMod.MOD_ID + ".pink_dirt");
+        setTranslationKey(PinkMod.MOD_ID + ".pink_podzol");
         setCreativeTab(PinkMod.creativeTabs);
-
     }
 
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return false;
-    }
-
-    @Override
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return false;
     }
 
@@ -72,7 +64,7 @@ public class BlockPinkDirt extends Block implements IGrowable {
 
                 blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
 
-                if (worldIn.getBlockState(blockpos1.down()).getBlock() != ModBlocks.blockPinkGrass || worldIn.getBlockState(blockpos1).isNormalCube()) {
+                if (worldIn.getBlockState(blockpos1.down()).getBlock() != ModBlocks.blockPinkPodzol || worldIn.getBlockState(blockpos1).isNormalCube()) {
                     break;
                 }
 
@@ -83,13 +75,7 @@ public class BlockPinkDirt extends Block implements IGrowable {
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        ItemStack held = player.getHeldItem(hand);
-        if (held.getItem() instanceof ItemHoe && world.isAirBlock(pos.up())) {
-            held.damageItem(1, player);
-            world.setBlockState(pos, ModBlocks.blockPinkFarmland.getDefaultState(), 1 | 2);
-            return true;
-        }
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return false;
     }
 
@@ -108,11 +94,12 @@ public class BlockPinkDirt extends Block implements IGrowable {
         return false;
     }
 
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        return ModBlocks.blockPinkDirt.getItemDropped(ModBlocks.blockPinkDirt.getDefaultState(), rand, fortune);
+    }
 
     @SideOnly(Side.CLIENT)
     public void initModel() {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
-
-
 }

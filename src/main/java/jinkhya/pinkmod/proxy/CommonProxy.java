@@ -1,9 +1,7 @@
 package jinkhya.pinkmod.proxy;
 
 import jinkhya.pinkmod.ModBlocks;
-import jinkhya.pinkmod.pinkblocks.BlockPinkDirt;
-import jinkhya.pinkmod.pinkblocks.BlockPinkFarmland;
-import jinkhya.pinkmod.pinkblocks.BlockPinkGrass;
+import jinkhya.pinkmod.pinkblocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -34,6 +32,12 @@ public class CommonProxy {
         event.getRegistry().register(new BlockPinkGrass());
         event.getRegistry().register(new BlockPinkDirt());
         event.getRegistry().register(new BlockPinkFarmland());
+        event.getRegistry().register(new BlockPinkGrassPath());
+        event.getRegistry().register(new BlockPinkPodzol());
+        event.getRegistry().register(new BlockPinkCoarseDirt());
+        event.getRegistry().register(new BlockPinkCobblestone());
+        event.getRegistry().register(new BlockPinkMossyCobblestone());
+        event.getRegistry().register(new BlockPinkStone());
     }
 
     @SubscribeEvent
@@ -41,5 +45,12 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkGrass).setRegistryName(ModBlocks.blockPinkGrass.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkDirt).setRegistryName(ModBlocks.blockPinkDirt.getRegistryName()));
         event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkFarmland).setRegistryName(ModBlocks.blockPinkFarmland.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkGrassPath).setRegistryName(ModBlocks.blockPinkGrassPath.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkPodzol).setRegistryName(ModBlocks.blockPinkPodzol.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkCoarseDirt).setRegistryName(ModBlocks.blockPinkCoarseDirt.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkCobblestone).setRegistryName(ModBlocks.blockPinkCobblestone.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkStone).setRegistryName(ModBlocks.blockPinkStone.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.blockPinkMossyCobblestone).setRegistryName(ModBlocks.blockPinkMossyCobblestone.getRegistryName()));
     }
+
 }

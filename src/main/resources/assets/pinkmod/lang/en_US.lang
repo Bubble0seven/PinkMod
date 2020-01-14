@@ -1,5 +1,11 @@
 itemGroup.pinkmod=Pink Mod
 
 tile.pinkmod.pink_grass.name=Pink Grass
-tile.pinkmod.pink_dirt.name=Pink Dirt
 tile.pinkmod.pink_farmland.name=Pink Farmland
+tile.pinkmod.pink_grass_path.name=Pink Grass Path
+tile.pinkmod.pink_dirt.name=Pink Dirt
+tile.pinkmod.pink_coarse_dirt.name=Pink Coarse Dirt
+tile.pinkmod.pink_podzol.name=Pink Podzol
+tile.pinkmod.pink_cobblestone.name=Pink Cobblestone
+tile.pinkmod.pink_stone.name=Pink Stone
+tile.pinkmod.pink_mossy_cobblestone.name=Pink Mossy Cobblestone

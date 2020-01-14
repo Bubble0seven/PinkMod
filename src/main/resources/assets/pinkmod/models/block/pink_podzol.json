@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "pinkmod:blocks/pink_dirt",
+    "top": "pinkmod:blocks/pink_dirt_podzol_top",
+    "side": "pinkmod:blocks/pink_dirt_podzol_side"
+  }
+}

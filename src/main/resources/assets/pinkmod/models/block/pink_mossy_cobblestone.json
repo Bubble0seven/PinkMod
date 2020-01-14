@@ -1,0 +1,11 @@
+{
+
+  "parent": "block/cube_all",
+
+  "textures": {
+
+    "all": "pinkmod:blocks/pink_mossy_cobblestone"
+
+  }
+
+}
