@@ -15,7 +15,9 @@ It adds 9 blocks :
 - Pink Cobblestone
 - Pink Mossy Cobblestone
 - 2 sets of tools
+- 2 sets of armor and 2 shields
 - oregen for Rose Quartz
+
 
 They behave like the vanilla variants.
 
