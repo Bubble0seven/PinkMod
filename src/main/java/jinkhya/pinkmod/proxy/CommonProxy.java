@@ -3,6 +3,8 @@ package jinkhya.pinkmod.proxy;
 import jinkhya.pinkmod.ModBlocks;
 import jinkhya.pinkmod.pinkblocks.*;
 import jinkhya.pinkmod.init.OreDictionnaryCompat;
+import jinkhya.pinkmod.pinkitems.armor.rosamond.*;
+import jinkhya.pinkmod.pinkitems.armor.rosequartz.*;
 import jinkhya.pinkmod.pinkitems.materials.RosamondDust;
 import jinkhya.pinkmod.pinkitems.materials.RosamondIngot;
 import jinkhya.pinkmod.pinkitems.materials.RoseQuartz;
@@ -81,6 +83,7 @@ public class CommonProxy {
         event.getRegistry().register(new RoseQuartzPickaxe());
         event.getRegistry().register(new RoseQuartzShovel());
         event.getRegistry().register(new RoseQuartzSword());
+        event.getRegistry().register(new RoseQuartzShield());
 
         event.getRegistry().register(new RosamondDust());
         event.getRegistry().register(new RosamondIngot());
@@ -89,6 +92,20 @@ public class CommonProxy {
         event.getRegistry().register(new RosamondPickaxe());
         event.getRegistry().register(new RosamondShovel());
         event.getRegistry().register(new RosamondSword());
+        event.getRegistry().register(new RosamondShield());
+
+        event.getRegistry().register(new RosamondHelmet());
+        event.getRegistry().register(new RosamondChestplate());
+        event.getRegistry().register(new RosamondLeggings());
+        event.getRegistry().register(new RosamondBoots());
+
+        event.getRegistry().register(new RoseQuartzHelmet());
+        event.getRegistry().register(new RoseQuartzChestplate());
+        event.getRegistry().register(new RoseQuartzLeggings());
+        event.getRegistry().register(new RoseQuartzBoots());
+
+
+
         //Oredict
         OreDictionnaryCompat.registerOre("cobblestone", ModBlocks.blockPinkCobblestone);
         OreDictionnaryCompat.registerOre("stone", ModBlocks.blockPinkStone);

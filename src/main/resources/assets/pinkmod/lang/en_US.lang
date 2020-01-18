@@ -22,9 +22,21 @@ item.pinkmod.rose_quartz_axe.name=Rose Quartz Axe
 item.pinkmod.rose_quartz_hoe.name=Rose Quartz Hoe
 item.pinkmod.rose_quartz_shovel.name=Rose Quartz Shovel
 item.pinkmod.rose_quartz_pickaxe.name=Rose Quartz Pickaxe
+item.pinkmod.rose_quartz_shield.name=Rose Quartz Shield
 
 item.pinkmod.rosamond_sword.name=Rosamond Sword
 item.pinkmod.rosamond_axe.name=Rosamond Axe
 item.pinkmod.rosamond_hoe.name=Rosamond Hoe
 item.pinkmod.rosamond_shovel.name=Rosamond Shovel
 item.pinkmod.rosamond_pickaxe.name=Rosamond Pickaxe
+
+item.pinkmod.rosamond_helmet.name=Rosamond Helmet
+item.pinkmod.rosamond_chestplate.name=Rosamond Chestplate
+item.pinkmod.rosamond_leggings.name=Rosamond Leggings
+item.pinkmod.rosamond_boots.name=Rosamond Boots
+item.pinkmod.rosamond_shield.name=Rosamond Shield
+
+item.pinkmod.rose_quartz_helmet.name=Rose Quartz Helmet
+item.pinkmod.rose_quartz_chestplate.name=Rose Quartz Chestplate
+item.pinkmod.rose_quartz_leggings.name=Rose Quartz Leggings
+item.pinkmod.rose_quartz_boots.name=Rose Quartz Boots
