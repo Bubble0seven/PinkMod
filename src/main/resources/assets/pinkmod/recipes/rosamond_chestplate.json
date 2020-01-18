@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key":
+  {
+    "r":
+    {
+      "item": "pinkmod:rosamond_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:rosamond_chestplate",
+    "count": 1
+  }
+}

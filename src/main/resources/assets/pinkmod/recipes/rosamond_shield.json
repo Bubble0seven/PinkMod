@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "iri",
+    "iri",
+    " i "
+  ],
+  "key":
+  {
+    "i":
+    {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "r":
+    {
+      "item": "pinkmod:rosamond_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:rosamond_shield",
+    "count": 1
+  }
+}
