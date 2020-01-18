@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "grinding=false,facing=north":  { "model":  "pinkmod:pink_grinder" },
+    "grinding=false,facing=south":  { "model":  "pinkmod:pink_grinder", "y": 90 },
+    "grinding=false,facing=west":  { "model":  "pinkmod:pink_grinder", "y": 180 },
+    "grinding=false,facing=east":  { "model":  "pinkmod:pink_grinder", "y": 270 },
+    "grinding=true,facing=north":  { "model":  "pinkmod:pink_grinder_on" },
+    "grinding=true,facing=south":  { "model":  "pinkmod:pink_grinder_on", "y": 90 },
+    "grinding=true,facing=west":  { "model":  "pinkmod:pink_grinder_on", "y": 180 },
+    "grinding=true,facing=east":  { "model":  "pinkmod:pink_grinder_on", "y": 270 }
+  }
+
+}

@@ -31,5 +31,20 @@
       <option name="name" value="deobfDeps" />
       <option name="url" value="file:$USER_HOME$/.gradle/caches/minecraft/deobfedDeps/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Mobius Repo" />
+      <option name="name" value="Mobius Repo" />
+      <option name="url" value="http://tehnut.info/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="http://dvs1.progwml6.com/files/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tterrag maven" />
+      <option name="name" value="tterrag maven" />
+      <option name="url" value="http://maven.tterrag.com/" />
+    </remote-repository>
   </component>
 </project>

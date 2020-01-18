@@ -1,0 +1,13 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "particles": "pinkmod:blocks/pink_grinder",
+    "up": "pinkmod:blocks/pink_grinder_front_off",
+    "down": "pinkmod:blocks/pink_grinder_front_off",
+    "north": "pinkmod:blocks/pink_grinder_front_off",
+    "east": "pinkmod:blocks/pink_grinder_front_side1",
+    "south": "pinkmod:blocks/pink_grinder_front_side3",
+    "east": "pinkmod:blocks/pink_grinder_front_side2"
+
+  }
+}
