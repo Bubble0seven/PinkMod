@@ -10,7 +10,8 @@
   {
     "d":
     {
-      "item": "minecraft:diamond"
+      "type": "forge:ore_dict",
+      "ore": "gemDiamond"
     },
     "r":
     {
