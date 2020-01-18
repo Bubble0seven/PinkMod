@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "r",
+    "r",
+    "s"
+  ],
+  "key":
+  {
+    "s":
+    {
+      "item": "minecraft:stick"
+    },
+    "r":
+    {
+      "item": "pinkmod:rosamond_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:rosamond_sword",
+    "count": 1
+  }
+}

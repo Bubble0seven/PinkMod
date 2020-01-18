@@ -1,10 +1,13 @@
 package jinkhya.pinkmod;
 
+import jinkhya.pinkmod.init.PinkmodRecipes;
 import jinkhya.pinkmod.proxy.CommonProxy;
+import jinkhya.pinkmod.world.ModWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -26,6 +29,8 @@ public class PinkMod {
     public static final String MOD_ID = "pinkmod";
     public static final String MOD_NAME = "PinkMod";
     public static final String VERSION = "2019.3-1.3.2";
+
+
 
     @SidedProxy(clientSide = "jinkhya.pinkmod.proxy.ClientProxy", serverSide = "jinkhya.pinkmod.proxy.ServerProxy")
     public static CommonProxy proxy;
@@ -52,6 +57,7 @@ public class PinkMod {
     public void preinit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         proxy.preInit(event);
+        GameRegistry.registerWorldGenerator(new ModWorldGen(),3);
     }
 
     /**
@@ -59,7 +65,7 @@ public class PinkMod {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        PinkmodRecipes.init();
     }
 
     /**
@@ -103,7 +109,8 @@ public class PinkMod {
          */
         @SubscribeEvent
         public static void addItems(RegistryEvent.Register<Item> event) {
-           /*
+            /*
+
              event.getRegistry().register(new ItemBlock(Blocks.myBlock).setRegistryName(MOD_ID, "myBlock"));
              event.getRegistry().register(new MySpecialItem().setRegistryName(MOD_ID, "mySpecialItem"));
             */

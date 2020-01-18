@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "dr"
+
+
+  ],
+  "key":
+  {
+    "d":
+    {
+      "item": "minecraft:diamond"
+    },
+    "r":
+    {
+      "item": "pinkmod:rose_quartz"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:rosamond_dust",
+    "count": 1
+  }
+}

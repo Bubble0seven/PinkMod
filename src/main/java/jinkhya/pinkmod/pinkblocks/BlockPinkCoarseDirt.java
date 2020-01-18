@@ -18,6 +18,7 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Resource;
 import java.util.Random;
 
 public class BlockPinkCoarseDirt extends Block implements IGrowable {

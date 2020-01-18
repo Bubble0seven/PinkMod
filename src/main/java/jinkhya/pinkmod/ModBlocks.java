@@ -36,6 +36,12 @@ public class ModBlocks {
     @GameRegistry.ObjectHolder("pinkmod:pink_mossy_cobblestone")
     public static BlockPinkMossyCobblestone blockPinkMossyCobblestone;
 
+    @GameRegistry.ObjectHolder("pinkmod:rose_quartz_ore")
+    public static RoseQuartzOre roseQuartzOre;
+
+
+
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         blockPinkDirt.initModel();
@@ -47,6 +53,8 @@ public class ModBlocks {
         blockPinkMossyCobblestone.initModel();
         blockPinkCobblestone.initModel();
         blockPinkStone.initModel();
+        roseQuartzOre.initModel();
     }
+    
 }
 

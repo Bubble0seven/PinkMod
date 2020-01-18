@@ -42,7 +42,6 @@ public class BlockPinkFarmland extends Block implements IGrowable {
         setTranslationKey(PinkMod.MOD_ID + ".pink_farmland");
         setSoundType(SoundType.GROUND);
         this.setLightOpacity(255);
-        setCreativeTab(PinkMod.creativeTabs);
     }
 
     @Override

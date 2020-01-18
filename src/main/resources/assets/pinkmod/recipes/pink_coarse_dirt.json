@@ -1,6 +1,7 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
     "DG",
     "GD"
   ],

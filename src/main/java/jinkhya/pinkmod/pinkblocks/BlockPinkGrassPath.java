@@ -35,7 +35,6 @@ public class BlockPinkGrassPath extends Block {
         setSoundType(SoundType.GROUND);
         setTranslationKey(PinkMod.MOD_ID + ".pink_grass_path");
         this.setLightOpacity(255);
-        setCreativeTab(PinkMod.creativeTabs);
     }
 
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {

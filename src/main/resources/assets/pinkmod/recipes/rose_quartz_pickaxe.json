@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "rrr",
+    " s ",
+    " s "
+  ],
+  "key":
+  {
+    "s":
+    {
+      "item": "minecraft:stick"
+    },
+    "r":
+    {
+      "item": "pinkmod:rose_quartz"
+    }
+  },
+  "result":
+  {
+    "item": "pinkmod:rose_quartz_pickaxe",
+    "count": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ccc",
+    "cbc",
+    "ccc"
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "pinkmod:pink_cobblestone"
+    },
+    "b":
+    {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:cobblestone",
+    "data": 0,
+    "count": 8
+  }
+}

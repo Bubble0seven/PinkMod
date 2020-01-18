@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "sss",
+    "sbs",
+    "sss"
+  ],
+  "key":
+  {
+    "s":
+    {
+      "item": "pinkmod:pink_stone"
+    },
+    "b":
+    {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:stone",
+    "data": 0,
+    "count": 8
+  }
+}

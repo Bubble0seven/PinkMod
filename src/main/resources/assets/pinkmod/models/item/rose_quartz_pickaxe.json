@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "pinkmod:items/rose_quartz_pickaxe"
+  }
+}
